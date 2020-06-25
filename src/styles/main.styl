@@ -1,39 +1,36 @@
-fontRegular = ProximaNovaRegular
-fontBold = ProximaNovaBold
-fontSemibold = ProximaNovaSemibold
-fontLight = ProximaNovaLight
+fontRegular = ProximaSoftRegular
+fontMedium = ProximaSoftMedium
+fontBold = ProximaSoftBold
+fontSemiBold = ProximaSoftSemiBold
 fontRouble = PTRoubleSans
 colorWhite = #ffffff
-colorDark = #57616c
+colorGrey = #54616c
 colorRed = #da2128
-colorGrey = #f7f7f5
-colorDarkBlue = #444e5f
 
 @font-face
-  font-family ProximaNovaRegular
-  src url(../assets/fonts/ProximaNova-Regular.woff2) format('woff2'),
-  url(../assets/fonts/ProximaNova-Regular.woff) format('woff')
+  font-family ProximaSoftRegular
+  src url("../assets/fonts/ProximaSoft-Regular.woff2") format('woff2'),
+  url("../assets/fonts/ProximaSoft-Regular.woff") format('woff')
 
 @font-face
-  font-family ProximaNovaBold
-  src url(../assets/fonts/ProximaNova-Bold.woff2) format('woff2'),
-  url(../assets/fonts/ProximaNova-Bold.woff) format('woff')
+  font-family ProximaSoftMedium
+  src url("../assets/fonts/ProximaSoft-Medium.woff2") format('woff2'),
+  url("../assets/fonts/ProximaSoft-Medium.woff") format('woff')
 
 @font-face
-  font-family ProximaNovaSemibold
-  src url(../assets/fonts/ProximaNova-Semibold.woff2) format('woff2'),
-  url(../assets/fonts/ProximaNova-Semibold.woff) format('woff')
+  font-family ProximaSoftBold
+  src url("../assets/fonts/ProximaSoft-Bold.woff2") format('woff2'),
+  url("../assets/fonts/ProximaSoft-Bold.woff") format('woff')
 
 @font-face
-  font-family ProximaNovaLight
-  src url(../assets/fonts/ProximaNova-Light.woff2) format('woff2'),
-  url(../assets/fonts/ProximaNova-Light.woff) format('woff')
+  font-family ProximaSoftSemiBold
+  src url("../assets/fonts/ProximaSoft-SemiBold.woff2") format('woff2'),
+  url("../assets/fonts/ProximaSoft-SemiBold.woff") format('woff')
 
-@font-face {
+@font-face
   font-family PTRoubleSans
   src url("../assets/fonts/RUBSN.woff2") format('woff2'),
   url("../assets/fonts/RUBSN.woff") format('woff')
-}
 
 //outline fix
 input
@@ -69,110 +66,181 @@ ul
     display inline-block !important
     content normal
 
-//styles
+//** General **//
 body
   font-family fontRegular, Arial, sans-serif
-  font-size 16px
-  color colorDark
+  font-size 14px
+  color colorGrey
   line-height 1
   background-color colorWhite
 
 img
-  display block
-  margin auto
   max-width 100%
   max-height 100%
 
 .container
-  padding 0 10px
+  padding 0 16px
 
   @media (min-width 768px)
-    max-width 768px
-    padding 0 20px
+    max-width 688px
+    padding 0
 
-  @media (min-width 960px)
-    max-width 960px
-
-  @media (min-width 1440px)
-    max-width 1440px
-    padding 0 40px
+  @media (min-width 1600px)
+    max-width 1170px
 
 .row
-  margin-left 0
-  margin-right 0
+  margin-left -5px
+  margin-right -5px
 
   @media (min-width 768px)
     margin-left -10px
     margin-right -10px
 
+  @media (min-width 1600px)
+    margin-left -15px
+    margin-right -15px
+
 .col
 [class*="col-"]
-  padding-left 0
-  padding-right 0
+  padding-left 5px
+  padding-right 5px
 
   @media (min-width 768px)
     padding-left 10px
     padding-right 10px
 
-section
-  position relative
+  @media (min-width 1600px)
+    padding-left 15px
+    padding-right 15px
 
-.nav-tabs
-  border-bottom 0
+section,
+.section
+  margin-bottom 40px
+
+  @media (min-width 768px)
+    margin-bottom 50px
+
+  @media (min-width 1600px)
+    margin-bottom 80px
+
+.section-title
+  font-family fontRegular
+  font-size 20px
+  line-height 1.3
+  letter-spacing 0.01em
+  text-align center
+  margin-bottom 10px
+  span
+    color colorRed
+    border-bottom 1px dashed colorRed
+    padding-bottom 3px
+
+  @media (min-width 768px)
+    font-size 26px
+    letter-spacing 0.02em
+    margin-bottom 20px
+
+  @media (min-width 1600px)
+    font-size 36px
+
+.text-regular
+  font-family fontRegular
+  font-size 14px
+  line-height 1.5
+  color colorGrey
+  span
+    color colorRed
+  &.center
+    text-align center
+    margin-bottom 20px
+
+  @media (min-width 768px)
+    font-size 16px
+    &.center
+      margin-bottom 30px
+
+  @media (min-width 1600px)
+    font-size 20px
 
 //** Links and buttons **//
 .btn
   display flex
   align-items center
   justify-content center
-  width 140px
-  height 48px
+  width 100%
+  height 40px
   font-family fontBold
-  font-size 18px
+  font-size 13px
+  line-height 1
+  letter-spacing 0.04em
+  text-transform uppercase
   color colorWhite
-  border-radius 2px
+  border-radius 30px
   background colorRed
   border 0
   padding 0
-  line-height 1
   &:hover
   &:focus
     color colorWhite
     text-decoration none
+    box-shadow 5px 10px 60px rgba(218, 33, 40, 0.3)
 
-  @media (min-width 768px)
-    width 200px
-    font-size 18px
+  @media (min-width 1600px)
+    height 52px
+    font-size 16px
 
 .btn-header
-  width 130px
-  height 30px
-  font-size 12px
 
   @media (min-width 768px)
+    width 146px
+    height 36px
+    font-size 11px
+
+  @media (min-width 1600px)
     width 200px
     height 48px
-    font-size 18px
+    font-size 16px
+    box-shadow none
 
-  @media (min-width 768px)
-    width 220px
+.btn-top
+  width 183px
+  margin auto
+
+  @media (min-width 1600px)
+    width 230px
 
 //** Header **//
-header
-.header
-  background colorWhite
-  padding 10px 0
-  box-shadow 0px 2px 4px rgba(0, 0, 0, 0.08)
-
-  @media (min-width 768px)
-    padding 26px 0
-
-.header-content
+.header-container
   display flex
   align-items center
   justify-content space-between
+  background colorWhite
+  height 51px
 
-.header-logos
+  @media (min-width 768px)
+    height 60px
+
+  @media (min-width 1600px)
+    height 100px
+
+.header-logo
+  width 122px
+
+  @media (min-width 768px)
+    width 196px
+
+  @media (min-width 1600px)
+    width 230px
+
+.header-phone-mobile
+  width 25px
+  height 25px
+  background url("../assets/images/phone-circle.svg") no-repeat center
+
+  @media (min-width 768px)
+    display none
+
+.header-links
   display none
 
   @media (min-width 768px)
@@ -180,753 +248,1186 @@ header
     align-items center
     justify-content space-between
 
-.logos
-  display flex
-  align-items center
-  justify-content space-between
-  width 100%
-  margin 25px 0
+.header-phone
+
+  @media (min-width 768px)
+    display flex
+    align-items center
+    font-family fontMedium
+    font-size 16px
+    color colorGrey
+    margin-right 30px
+    &::before
+      content ""
+      background url("../assets/images/phone.svg") no-repeat center
+      background-size contain
+      width 15px
+      height 15px
+      margin-right 7px
+
+  @media (min-width 1600px)
+    font-size 20px
+    &::before
+      width 26px
+      height 26px
+      margin-right 15px
+
+//** Top - Slider & features **//
+.main-wrapper
+  position relative
+
+.main-top
+  position absolute
+  top 100px
+  left 0
+  right 0
+
+  @media (min-width 768px)
+    top 15.5%
+
+  @media (min-width 1600px)
+    top 30%
+
+.swiper-mobile,
+.swiper-main
+  z-index -1
+  .swiper-slide
+    img
+      width 100%
+
+.swiper-mobile
 
   @media (min-width 768px)
     display none
 
-.header-links
-  display flex
-  align-items center
-  justify-content space-between
-  width 100%
+.swiper-main
+  display none
 
   @media (min-width 768px)
-    width auto
+    display block
 
-.logo-main
-  max-width 120px
-  margin 0
-
-  @media (min-width 768px)
-    max-width 164px
-    margin-right 28px
-
-  @media (min-width 1440px)
-    max-width 224px
-    margin-right 67px
-
-.logo-partner
-  max-width 88px
-  margin 0
-
-  @media (min-width 768px)
-    max-width 100px
-
-  @media (min-width 1440px)
-    max-width 134px
-
-.header-phone
-  font-family fontRegular
-  font-size 14px
-  line-height 1.2
-  color colorDark
-
-  @media (min-width 768px)
-    font-size 20px
-    margin-right 20px
-
-  @media (min-width 1440px)
-    font-size 22px
-
-//** Attention **//
-.attention
-  display flex
-  align-items flex-start
-  background colorGrey
-  padding 12px 20px
-  margin 20px 0
-
-  @media (min-width 768px)
-    align-items center
-    padding 22px 18px
-
-  @media (min-width 1440px)
-    padding 22px 40px
-
-.attention-img
-  width 24px
-  margin 0 16px 0 0
-
-  @media (min-width 768px)
-    width 35px
-    margin-right 24px
-
-  @media (min-width 1440px)
-    margin-right 27px
-
-.attention-text
-  font-family fontRegular
-  font-size 11px
-  line-height 1.24
-  color colorDark
-
-  @media (min-width 768px)
-    font-size 14px
-    line-height 1.32
-
-//** Top **//
-.section-top
-  height 80vh
-
-.top
-  background url("/assets/images/top.png") no-repeat center
-  height 419px
-  background-size cover
-
-  @media (min-width 576px)
-    background url("/assets/images/top-768.png") no-repeat top
-    background-size contain
-
-  @media (min-width 768px)
-    background url("/assets/images/top-768.png") no-repeat center
-    height 453px
-
-  @media (min-width 960px)
-    background url("/assets/images/top-1440.png") no-repeat center
-    background-size cover
-
-  @media (min-width 1440px)
-    background url("/assets/images/top-1440.png") no-repeat center
-    height 707px
-
-.top-text
-  font-family fontLight
-  font-size 22px
-  line-height 1.24
-  color colorDark
-  text-align center
-  padding-top 18px
-  span
-    font-family fontSemibold
-
-  @media (min-width 768px)
-    width 50%
-    margin-left auto
-    font-size 34px
-    line-height 1.16
-    padding-top 80px
-
-  @media (min-width 1440px)
-    font-size 56px
-    padding-top 135px
-
-.link-down
-  position absolute
-  bottom -80px
-  left 0
-  right 0
-  display block
-  margin auto
-  background url("/assets/images/arrow-in-round.svg") no-repeat center
-  width 60px
-  height 60px
-  background-size contain
-
-  @media (min-width 768px)
-    bottom -60px
-    width 80px
-    height 80px
-
-  @media (min-width 1440px)
-    bottom 100px
-
-//** Safety **//
-.safety
-  background colorGrey
-  padding 30px 10px 40px
-  margin-bottom 55px
-
-  @media (min-width 768px)
-    padding 55px 0
-    margin-bottom 90px
-
-  @media (min-width 1440px)
-    padding 125px 0
-    margin-bottom 100px
-
-.safety-video
-  margin-bottom 30px
-
-  @media (min-width 768px)
-    margin-bottom 37px
-
-  @media (min-width 1440px)
-    margin-bottom 0
-
-.safety-title
-  font-family fontLight
-  font-size 22px
-  line-height 1.16
-  color colorDark
-  margin-bottom 13px
-
-  @media (min-width 768px)
-    font-size 48px
-
-.safety-text
-  font-family fontRegular
-  font-size 16px
-  line-height 1.4
-  color colorDark
-
-  @media (min-width 768px)
-    font-size 18px
-    line-height 1.64
-
-//** Set **//
-.set
-  padding-bottom 50px
-  margin-bottom 48px
-  border-bottom 2px solid colorGrey
-  &:last-of-type
-    border-bottom 0
-
-  @media (min-width 768px)
-    padding-bottom 0
-    margin-bottom 100px
-    border-bottom 0
-
-.set-title
-  font-family fontLight
-  font-size 28px
-  line-height 1.16
-  color colorDark
-  margin-bottom 12px
-
-  @media (min-width 768px)
-    font-size 48px
-    text-align center
-
-  @media (min-width 1440px)
-    text-align left
-
-.set-text
-  font-family fontRegular
-  font-size 16px
-  line-height 1.4
-  color colorDark
-  margin-bottom 23px
-
-  @media (min-width 768px)
-    font-size 22px
-    text-align center
-
-  @media (min-width 1440px)
-    text-align left
-
-.product-img
+.main-text-top
   display flex
   align-items center
   justify-content center
-  background colorGrey
-  img
-    max-width 75%
+  height 25px
+  font-family fontRegular
+  font-size 12px
+  line-height 1.3
+  letter-spacing 0.01em
+  color colorWhite
+  margin-bottom 12px
+  background linear-gradient(90deg, rgba(218, 33, 40, 0) 0%,
+                                    rgba(218, 33, 40, 0.8) 26.56%,
+                                    rgba(218, 33, 40, 0.8) 51.56%,
+                                    rgba(218, 33, 40, 0.8) 76.56%,
+                                    rgba(218, 33, 40, 0) 100%)
 
-  @media (min-width 1440px)
-    img
-      max-width 100%
+  @media (min-width 768px)
+    width 420px
+    margin auto
+    font-size 14px
+    margin-bottom 15px
 
-.thumbnails
+  @media (min-width 1600px)
+    width 618px
+    height 34px
+    font-size 20px
+
+.main-text-bottom
   display flex
-  flex-direction row
-  justify-content space-between
-  margin-top 20px
-  margin-bottom 28px
+  align-items center
+  justify-content center
+  height 36px
+  font-family fontRegular
+  font-size 20px
+  line-height 1.3
+  letter-spacing 0.01em
+  color colorWhite
+  margin-bottom 25px
+  background linear-gradient(90deg, rgba(84, 97, 108, 0.328) 0%,
+                                    rgba(46, 72, 98, 0.8) 26.56%,
+                                    rgba(46, 72, 98, 0.8) 51.56%,
+                                    rgba(46, 72, 98, 0.8) 76.56%,
+                                    rgba(69, 87, 104, 0.608) 90.73%,
+                                    rgba(84, 97, 108, 0.192) 100%)
+  span
+    color #fe3945
 
   @media (min-width 768px)
-    justify-content center
-    margin-top 62px
-    margin-bottom 0
+    height 42px
+    font-size 28px
+    margin-bottom 20px
+    background linear-gradient(90deg, rgba(84, 97, 108, 0) 0%,
+                                      rgba(46, 72, 98, 0.8) 26.56%,
+                                      rgba(46, 72, 98, 0.8) 51.56%,
+                                      rgba(46, 72, 98, 0.8) 76.56%,
+                                      rgba(84, 97, 108, 0) 100%)
 
-  @media (min-width 1440px)
-    justify-content flex-start
+  @media (min-width 1600px)
+    height 64px
+    font-size 48px
 
-#thumbnails-life
+.features
+  background colorWhite
+  padding 16px 0
+  box-shadow 0 0 30px rgba(46, 46, 46, 0.1)
 
-  @media (min-width 1440px)
-    padding-left 92px
-    margin-top -11.5%
-
-#thumbnails-home
-
-  @media (min-width 1440px)
-    padding-left 82px
-    margin-top -12%
-
-.thumbnail
-  position relative
-  display flex
-  background colorGrey
-  width 80px
-  height 80px
-  cursor pointer
-  &.active
-    .border-tl
-    .border-tr
-    .border-br
-    .border-bl
-      position absolute
-      width 5px
-      height 5px
-      border-width 1px
-      border-color colorRed
-    .border-tl
-      top 0
-      left 0
-      border-style solid none none solid
-    .border-tr
-      top 0
-      right 0
-      border-style solid solid none none
-    .border-br
-      bottom 0
-      right 0
-      border-style none solid solid none
-    .border-bl
-      bottom 0
-      left 0
-      border-style none none solid solid
-
-  @media (min-width 768px)
-    &+.thumbnail
-      margin-left 20px
-
-.product-container
-
-  @media (min-width 768px)
-    padding-left 36px
-
-  @media (min-width 1440px)
-    padding-left 92px
-    margin-top 40px
-
-.product-wrapper
+.features-container
   display flex
   flex-direction column
-  justify-content space-between
-  height 100%
+  padding 0 16px
 
-  @media (min-width 1440px)
-    justify-content flex-start
+  @media (min-width 768px)
+    flex-direction row
+    justify-content space-between
+    padding 0 40px
 
-.product-title
-  font-family fontBold
+  @media (min-width 992px)
+    justify-content center
+
+  @media (min-width 1600px)
+    justify-content space-between
+    padding 0
+    max-width 1170px
+    margin auto
+
+.feature
+  display flex
+  align-items center
+  font-family fontMedium
   font-size 14px
-  line-height 1.4
-  color colorDark
+  line-height 1.3
+  letter-spacing 0.02em
+  br
+    display none
+  &+.feature
+    margin-top 10px
+
+  @media (min-width 768px)
+    flex-shrink 0
+    font-size 13px
+    padding-right 30px
+    br
+      display block
+    &+.feature
+      margin-top 0
+
+  @media (min-width 1600px)
+    font-size 16px
+    padding-right 0
+    &+.feature
+      margin-left 48px
+
+.feature-img
+  display flex
+  align-items center
+  justify-content center
+  flex-shrink 0
+  width 30px
+  height 30px
+  border-radius 100%
+  border 1px dashed rgba(84, 97, 108, 0.2)
+  margin-right 10px
+  img
+    width 20px
+
+  @media (min-width 768px)
+    width 28px
+    height 28px
+    border 0
+    img
+      width 28px
+
+  @media (min-width 1600px)
+    width 35px
+    height 35px
+    margin-right 13px
+    img
+      width 35px
+
+.h-scroll
+  overflow-x scroll
+
+.h-scroll-wrap
+  position relative
+  &::after
+    content ""
+    position absolute
+    top 0
+    right 0
+    height 100%
+    width 5rem
+    background-image:linear-gradient( to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+    transision all linear 0.3s
+  &::before
+    content ""
+    position absolute
+    top 0
+    left 0
+    height 100%
+    width 5rem
+    background-image linear-gradient( to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))
+    transision all linear 0.3s
+  &.scrolled-right
+    &::after
+      background-image linear-gradient( to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))
+  &.scrolled-left
+    &::before
+      background-image linear-gradient( to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+
+//** Work **//
+.work
+  position relative
+  width 139px
+  height 139px
+
+  @media (min-width 768px)
+    width 200px
+    height 200px
+
+  @media (min-width 1600px)
+    width 324px
+    height 324px
+
+.work-1
+  margin auto
+
+  @media (min-width 768px)
+    float left
+
+.work-2
+  margin auto
+
+  @media (min-width 768px)
+    position relative
+    &::before
+    &::after
+      position absolute
+      top calc(50% - 16px)
+      content ""
+      background url("../assets/images/arrow_circle.svg") no-repeat center
+      background-size contain
+      width 32px
+      height 32px
+    &::before
+      left -38px
+    &::after
+      right -38px
+
+  @media (min-width 1600px)
+    &::before
+    &::after
+      top calc(50% - 23.5px)
+      width 47px
+      height 47px
+    &::before
+      left -73px
+    &::after
+      right -73px
+
+.work-3
+  margin auto
+  margin-top -10px
+
+  @media (min-width 768px)
+    margin-top 0
+    float right
+
+.work-img
+  position relative
+  z-index -1
+  border-radius 100%
+  border 7px solid rgba(84, 97, 108, 0.08)
+
+  @media (min-width 768px)
+    border-width 8px
+
+  @media (min-width 1600px)
+    border-width 22px
+
+.wort-title
+  position absolute
+  left 0
+  right 0
+  bottom 25px
+  font-family fontSemiBold
+  font-size 10px
+  line-height 1.5
+  letter-spacing 0.01em
+  text-align center
+  text-transform uppercase
+  color colorWhite
+
+  @media (min-width 768px)
+    bottom 40px
+    font-size 12px
+
+  @media (min-width 1600px)
+    bottom 69px
+    font-size 16px
+
+//** Steps **//
+.swiper-steps
+  padding 15px 15px 30px
+  margin 0 -15px
+
+  @media (min-width 768px)
+    display none
+
+.step-pagination
+  &.swiper-pagination-bullets
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    z-index 100
+    margin auto
+    display flex
+    justify-content space-between
+    width 82px
+    outline none
+
+.step-nav-prev
+.step-nav-next
+  position absolute
+  top calc(50% - 30px)
+  z-index 100
+  background url("../assets/images/arrow_circle.svg") no-repeat center
+  width 30px
+  height 30px
+  background-size contain
+
+.step-nav-prev
+  transform rotate(180deg)
+  left 0
+
+.step-nav-next
+  right 20px
+
+.swiper-button-disabled
+  display none
+
+.steps
+  display none
+
+  @media (min-width 768px)
+    display flex
+
+.step
+  background colorWhite
+  width 268px
+  height 100%
+  padding 25px 20px
+  border-radius 20px
+  box-shadow 0 0 40px rgba(62, 62, 62, 0.08)
+
+  @media (min-width 768px)
+    width auto
+    height calc(100% - 20px)
+    padding 25px 30px
+    margin-bottom 20px
+
+  @media (min-width 1600px)
+    height 100%
+    padding 20px 20px 25px
+    margin-bottom 0
+
+.step-title
+  font-family fontBold
+  font-size 22px
+  color colorRed
+
+  @media (min-width 1600px)
+    font-size 24px
+
+.step-text
+  font-family fontMedium
+  font-size 16px
+  line-height 1.5
+  text-align center
+
+//** Install **//
+.install-container
+  display flex
+  flex-direction column
+
+  @media (min-width 768px)
+    flex-direction row
+    justify-content center
+
+.install-img
+  width 100%
+  img
+    width 100%
+
+  @media (min-width 768px)
+    width 50%
+
+//** Device **//
+.section-device
+
+  @media (min-width 1600px)
+    margin-bottom 0
+
+.device-img
+  display flex
+  align-items center
+  justify-content flex-end
   margin-bottom 10px
 
   @media (min-width 768px)
-    font-size 18px
+    margin-bottom 0
+    width 300px
+    margin-top -56px
 
-.product-text
+  @media (min-width 1600px)
+    width 575px
+    margin -120px 0 0 68px
+
+.spec-subtitle
   font-family fontRegular
   font-size 14px
-  line-height 1.4
-  color colorDark
-  margin-bottom 16px
+  line-height 1.5
+  text-align center
+  margin-bottom 27px
 
   @media (min-width 768px)
-    font-size 18px
+    font-size 16px
+    text-align left
+    margin-bottom 20px
 
-  @media (min-width 1440px)
-    margin-bottom 26px
+  @media (min-width 1600px)
+    font-size 20px
+    margin-bottom 29px
 
-.prices
-  margin-bottom 16px
+.spec
+  display flex
+  background colorWhite
+  padding 15px
+  border-radius 20px
+  box-shadow 0 0 40px rgba(62, 62, 62, 0.08)
+  &+.spec
+    margin-top 10px
 
   @media (min-width 768px)
-    margin-bottom 24px
+    width 383px
 
-.price-text
+  @media (min-width 1600px)
+    width 500px
+    padding 20px
+    &+.spec
+      margin-top 15px
+
+.spec-img
+  display flex
+  align-items center
+  justify-content center
+  flex-shrink 0
+  width 34px
+  height 34px
+  border-radius 100%
+  border 1px dashed rgba(84, 97, 108, 0.2)
+  margin-right 10px
+  img
+    width 22px
+
+  @media (min-width 768px)
+    width 40px
+    height 40px
+    margin-right 15px
+    img
+      width 25px
+
+  @media (min-width 1600px)
+    width 56px
+    height 56px
+    margin-right 20px
+    img
+      width 35px
+
+.spec-text
   font-family fontRegular
   font-size 14px
-  line-height 1.2
-  color colorDark
+  line-height 1.5
+
+  @media (min-width 1600px)
+    font-size 18px
+
+//** Tariffs **//
+.section-tariffs
+  @media (min-width 1600px)
+    background url("../assets/images/bg_home.png") no-repeat bottom
+    background-size contain
+    padding 323px 0 75px
+    margin-top -157px
+
+.discount
+  display flex
+  align-items center
+  justify-content center
+  margin 17px 0
+
+  @media (min-width 768px)
+    margin 24px 0 20px
+
+  @media (min-width 1600px)
+    margin 43px 0 20px
 
 .price
-  font-family fontBold
-  font-size 24px
-  line-height 1.2
-  color colorDark
+  font-size 22px
+  line-height 1.4
 
   @media (min-width 768px)
     font-size 32px
+
+  @media (min-width 1600px)
+    font-size 46px
+
+.price-old
+  font-family fontRegular
+  text-decoration line-through
+
+.price-new
+  font-family fontMedium
+  color colorRed
 
 .rouble-sign
   font-family fontRouble
   font-size 0.95em
 
-.text-red
-  color colorRed
+.discount-img
+  width 30px
+  height 30px
+  margin 0 8px
 
-.price-old
+  @media (min-width 768px)
+    width 34px
+    height 34px
+    margin 0 17px
+
+  @media (min-width 1600px)
+    width 54px
+    height 54px
+    margin 0 26px
+
+.plus-img
+  display block
+  width 30px
+  height 30px
+  margin 0 auto 20px
+
+  @media (min-width 768px)
+    width 32px
+    height 32px
+
+  @media (min-width 1600px)
+    width 47px
+    height 47px
+    margin 0 auto 28px
+
+.tariff
+  position relative
+  background colorWhite
+  padding 27px 0 20px
+  border-radius 20px
+  box-shadow 0 0 60px rgba(82, 82, 82, 0.11)
+
+  @media (min-width 768px)
+    padding 55px 25px 30px
+
+  @media (min-width 1600px)
+    padding 59px 30px 30px
+
+.tariffs-tabs
+
+  @media (min-width 768px)
+    display none
+
+.tariffs
+  display none
+
+  @media (min-width 768px)
+    display block
+    margin-top 60px
+
+.tariff-title
+  font-family fontMedium
+  font-size 18px
+  line-height 1.3
+  letter-spacing 0.01em
+  text-align center
+  margin-bottom 25px
+  span
+    color colorRed
+    border-bottom 1px dashed colorRed
+    padding-bottom 3px
+
+  @media (min-width 768px)
+    font-size 21px
+    margin 0 -0.12em 20px
+
+  @media (min-width 1600px)
+    font-size 26px
+
+.tariff-tabs
+  margin-bottom 28px
+
+.tariff-tab
+  width 50%
+  height 50px
+  display flex
+  flex-direction column
+  align-items center
+  justify-content flex-end
+  font-family fontMedium
+  font-size 11px
+  letter-spacing 0.04em
+  text-transform uppercase
+  padding-bottom 9px
+  &.active
+    color colorRed
+    border-bottom 2px solid colorRed
+    .apartment-icon
+      background-image url("../assets/images/apartment_red.png")
+    .house-icon
+      background-image url("../assets/images/house_red.svg")
+
+.tariff-icon
+  background-repeat no-repeat
+  background-position center
+  background-size contain
+  width 20px
+  height 20px
+  margin-bottom 7px
+
+  @media (min-width 768px)
+    position absolute
+    top -30px
+    left 0
+    right 0
+    margin auto
+    width 60px
+    height 60px
+    margin-bottom 0
+
+  @media (min-width 1600px)
+    top -40px
+    width 80px
+    height 80px
+
+.apartment-icon
+  background-image url("../assets/images/apartment.png")
+
+  @media (min-width 768px)
+    background-image url("../assets/images/apartment_circle.png")
+
+.house-icon
+  background-image url("../assets/images/house.svg")
+
+  @media (min-width 768px)
+    background-image url("../assets/images/house_circle.svg")
+
+.tab-content
+  padding 0 17px
+
+  @media (min-width 768px)
+    padding 0
+
+.tariff-list
   font-family fontRegular
-  font-size 16px
-  line-height 1.1875
-  color colorDark
-  text-decoration line-through
+  font-size 13px
+  line-height 1.5
+  margin-bottom 20px
+  list-style none
+  li
+    display flex
+    align-items center
+    margin-bottom 8px
+    &::before
+      content ""
+      width 6px
+      height 6px
+      border-radius 100%
+      background colorRed
+      box-shadow 0 0 11px rgba(218, 33, 40, 0.7)
+      margin-right 10px
 
   @media (min-width 768px)
-    font-size 20px
+    font-size 14px
 
-//** App slider **//
-.section-app
-  margin-bottom 100px
+  @media (min-width 1600px)
+    font-size 18px
+    margin-bottom 30px
+    li
+      &::before
+        margin-right 20px
+
+.tariff-text
+  font-family fontRegular
+  font-size 13px
+  line-height 1.5
+  text-align center
+  opacity 0.5
+  margin-bottom 5px
 
   @media (min-width 768px)
-    margin-bottom 40px
+    font-size 14px
 
-.app-container
-  overflow hidden
-  height 528px
+  @media (min-width 1600px)
+    font-size 16px
+
+.tariff-price
+  font-family fontMedium
+  font-size 18px
+  line-height 1.4
+  text-align center
+  color colorRed
+  margin-bottom 20px
 
   @media (min-width 768px)
-    background colorGrey
-    height 342px
+    font-size 21px
+    margin-bottom 22px
 
-  @media (min-width 1440px)
-    height 640px
+  @media (min-width 1600px)
+    font-size 26px
+    margin-bottom 26px
+
+//** App **//
+.swiper-app
+  margin-bottom 25px
+
+  @media (min-width 768px)
+    display none
+
+.app-nav-prev
+.app-nav-next
+  position absolute
+  top 33%
+  z-index 100
+  background url("../assets/images/arrow_circle.svg") no-repeat center
+  width 30px
+  height 30px
+  background-size contain
+
+.app-nav-prev
+  transform rotate(180deg)
+  left 0
+
+.app-nav-next
+  right 0
+
+.app-pagination
+  &.swiper-pagination-bullets
+    position absolute
+    bottom 32%
+    left 0
+    right 0
+    z-index 100
+    margin auto
+    display flex
+    justify-content space-between
+    width 82px
+    outline none
+
+.nav-bullet
+  width 10px
+  height 10px
+  border-radius 100%
+  background #e0e0e0
+  cursor pointer
+  &:focus
+    outline none
+  &.active
+    background colorRed
 
 .app-img
-  background colorGrey
-  overflow hidden
-  height 337px
-  margin-bottom 26px
-  img
-    max-height none
+  display block
+  margin auto
+  margin-bottom 30px
 
   @media (min-width 768px)
-    background transparent
-    margin-bottom 0
-    height 342px
+    display none
+    &:first-of-type
+      display inline-block
 
-  @media (min-width 1440px)
-    height 640px
+.app
+  display none
+
+  @media (min-width 768px)
+    display flex
+    align-items center
+    justify-content space-between
+    position relative
+    padding-bottom 30px
+
+  @media (min-width 1600px)
+    padding-top 89px
+    padding-bottom 162px
+
+.app-img-container
+
+  @media (min-width 768px)
+    position absolute
+    top -28px
+    left 0
+    right 0
+    margin auto
+    z-index -1
+    width 50%
+
+  @media (min-width 1600px)
+    top 0
+
+.app-option
+  &:hover
+  &.active
+    background colorRed
+    box-shadow 5px 10px 70px rgba(218, 33, 40, 0.3)
+    .app-title,
+    .app-text
+      color colorWhite
+
+  @media (min-width 768px)
+    width 246px
+    background #f6f6f6
+    padding 15px
+    border-radius 20px
+    &+.app-option
+      margin-top 20px
+
+  @media (min-width 1600px)
+    width 410px
+    padding 20px 25px
+    border-radius 30px
 
 .app-title
-  font-family fontLight
-  font-size 28px
-  line-height 1.16
-  color colorDark
-  margin-bottom 12px
-  margin-left 28px
+  font-family fontBold
+  font-size 18px
+  line-height 1.4
+  text-align center
+  color colorRed
+  margin-bottom 10px
 
   @media (min-width 768px)
-    width 120%
-    font-size 38px
-    margin-bottom 20px
-    margin-left 0
+    font-size 14px
+    text-align left
+    margin-bottom 7px
 
-  @media (min-width 1440px)
-    width 110%
-    font-size 48px
-    margin-bottom 16px
+  @media (min-width 1600px)
+    font-size 18px
+    margin-bottom 10px
 
 .app-text
   font-family fontRegular
-  font-size 16px
-  line-height 1.4
-  color colorDark
-  margin-left 28px
+  font-size 14px
+  line-height 1.5
+  text-align center
 
   @media (min-width 768px)
-    font-size 18px
-    line-height 1.64
-    margin-left 0
+    font-size 12px
+    text-align left
 
-.app-navigation
-  position absolute
-  top 364px
-  left 9px
-  z-index 100
+  @media (min-width 1600px)
+    font-size 16px
 
-  @media (min-width 768px)
-    top 20px
-    right 20px
-    left auto
-
-  @media (min-width 1440px)
-    top 132px
-    right 35px
-
-.app-pagination
+.download
   display flex
   flex-direction column
-  justify-content space-between
-  height 40px
-  .swiper-pagination-bullet
-    background #dbdbdb
-    opacity 1
-    cursor pointer
-  .swiper-pagination-bullet-active
-    background colorRed
-
-//** Footer **//
-footer
-.footer
-  background-color colorDarkBlue
-  padding 20px 0 44px
+  align-items center
+  background #fafafa
+  padding 15px
+  border-radius 8px
+  border 1px dashed #bdbdbd
 
   @media (min-width 768px)
-    padding 40px 0
+    flex-direction row
+    justify-content space-between
+    padding 20px 15px
 
-.footer-top
+  @media (min-width 1600px)
+    width 872px
+    padding 20px
+    margin auto
 
-  @media (min-width 768px)
-    margin-bottom 40px
-
-.logo-container
+.download-text
+  font-family fontBold
+  font-size 13px
+  line-height 1.4
   text-align center
-  margin-bottom 30px
+  margin-bottom 10px
 
   @media (min-width 768px)
-    margin-bottom 0
-
-.footer-logo
-  max-width 224px
-
-.text-container
-  text-align center
-  margin-bottom 30px
-
-  @media (min-width 768px)
+    font-size 16px
     text-align left
     margin-bottom 0
 
-.footer-text
-  font-family fontRegular
-  font-size 16px
-  line-height 1.4
-  color colorWhite
-  margin-bottom 10px
+  @media (min-width 1600px)
+    font-size 20px
 
-.footer-phone
-  font-family fontRegular
-  font-size 16px
-  line-height 1.4
-  color colorWhite
-  &:hover
-  &:focus
-    color colorWhite
+.download-links
+  display flex
+  align-items center
+  justify-content center
 
-.social-container
-  text-align center
-  margin-bottom 37px
+.download-link
+  height 38px
+  &+.download-link
+    margin-left 10px
 
   @media (min-width 768px)
-    text-align right
+    height 42px
+    &+.download-link
+      margin-left 20px
+
+  @media (min-width 1600px)
+    height 52px
+
+//** Callback form **//
+.section-callback
+
+  @media (min-width 768px)
+    background url("../assets/images/bg_room_md.png") no-repeat center
+    background-size contain
+    padding 70px 0
     margin-bottom 0
 
-.link-social
-  width 40px
-  opacity 0.5
-  &+.link-social
-    margin-left 15px
-  &:hover
-  &:focus
-    opacity 1
+  @media (min-width 1600px)
+    background url("../assets/images/bg_room_xl.png") no-repeat center
+    background-size contain
+    padding 182px 0 140px
 
-.link-container
+.callback
+  background colorWhite
+  padding 20px 15px 15px
+  border-radius 10px
+  box-shadow 0 0 60px rgba(0, 0, 0, 0.1)
+
+  @media (min-width 768px)
+    width 392px
+    margin auto
+    padding 30px
+    border-radius 20px
+
+  @media (min-width 1600px)
+    width 470px
+    padding 40px 50px 50px
+    border-radius 30px
+
+.callback-text
+  font-family fontRegular
+  font-size 14px
+  line-height 1.5
   text-align center
   margin-bottom 20px
 
   @media (min-width 768px)
-    text-align left
-    margin-bottom 0
+    font-size 16px
 
-.footer-link
+  @media (min-width 1600px)
+    font-size 18px
+
+.form-group
+  margin-bottom 15px
+
+  @media (min-width 768px)
+    margin-bottom 17px
+
+  @media (min-width 1600px)
+    margin-bottom 20px
+
+.form-control
+  height 44px
+  padding 12px 15px
+  font-size fontRegular
+  font-size 14px
+  color colorGrey
+  line-height 1.3
+  background-color #f4f4f4
+  border 0
+  border-radius 6px
+  transition none
+  &::placeholder
+    color #9b9b9b
+  &:focus
+    color colorGrey
+    background-color #f4f4f4
+
+  @media (min-width 1600px)
+    height 52px
+    padding 15px 20px
+    font-size 16px
+
+.form-check
+  padding-left 0
+
+.custom-check
+  position absolute
+  left 0
+  z-index -1
+  width 1rem
+  height 1rem
+  opacity 0
+
+.custom-check-label
   font-family fontRegular
-  font-size 16px
-  line-height 1.4
-  color colorWhite
+  font-size 10px
+  line-height 1.5
+  padding-left 25px
+  margin 0
+  &:before
+  &:after
+    position absolute
+    content ""
+    width 15px
+    height 15px
+    border-radius 3px
+    background #f2f2f2
+    border 1px solid #e0e0e0
+    top 2px
+    left 0
+    margin 0
+
+  @media (min-width 768px)
+    font-size 12px
+
+  @media (min-width 1600px)
+    font-size 14px
+    padding-left 32px
+    &:before
+    &:after
+      width 17px
+      height 17px
+
+.custom-check
+  &:checked
+    &~.custom-check-label
+      &:before
+        background #f2f2f2
+      &:after
+        left 5px
+        top 5px
+        width 6px
+        height 8px
+        border solid colorGrey
+        border-width 0 3px 3px 0
+        transform rotate(45deg)
+
+  @media (min-width 1600px)
+    &:checked
+      &~.custom-check-label
+        &:after
+          width 7px
+          height 10px
+
+.custom-check:not(:disabled):active~.custom-check-label::before
+  background #f2f2f2
+
+.custom-check:focus ~ .custom-check-label::before
+  box-shadow: none
+
+.form-link
   text-decoration underline
   &:hover
   &:focus
-    color colorWhite
     text-decoration underline
 
-.copyright-container
-  text-align center
-
-.copyright
-  font-family fontRegular
-  font-size 12px
-  line-height 1.4
-  color colorWhite
-  opacity 0.5
-
-//** Callback form **//
-.screen-callback
-  background colorWhite
-  .modal-body
-    padding 40px 20px
-  .modal-content
-    border 0
-
-  @media (min-width 1024px)
-    max-width 65%
-
-.close
-  position absolute
-  top 20px
-  right 20px
-  z-index 100
-
-.callback-title
-  font-family fontBold
-  font-size 42px
-  color colorDark
-  text-align center
-  margin-bottom 25px
+//** Footer **//
+footer
+.footer
+  background-color colorGrey
+  padding 30px 0 15px
 
   @media (min-width 768px)
-    font-size 37px
-    margin-bottom 30px
+    padding 25px 0 16px
 
-  @media (min-width 1440px)
-    font-size 63px
-    margin-bottom 50px
+  @media (min-width 1600px)
+    padding 30px 0
 
-.callback-text
-  font-family fontRegular
-  font-size 15px
-  line-height 1.75
-  text-align center
-  margin-bottom 30px
+.footer-top
+  padding-bottom 30px
+  border-bottom 1px solid rgba(255, 255, 255, 0.1)
+  margin-bottom 15px
 
   @media (min-width 768px)
-    line-height 1.38
+    padding-bottom 24px
+    margin-bottom 17px
+
+  @media (min-width 1600px)
+    padding-bottom 50px
     margin-bottom 25px
 
-  @media (min-width 1440px)
-    font-size 23px
-    margin-bottom 55px
-
-.callback-success
-//  display none
-  .callback-title
-    margin-top 20px
-
-.form-small
-  font-family fontLight
-  font-size 12px
-  margin-top 24px
-
-  @media (min-width 1440px)
-    font-size 20px
-
-.form-group
-  margin-bottom 14px
-
-  @media (min-width 768px)
-    margin-bottom 20px
-
-  @media (min-width 1440px)
-    margin-bottom 30px
-
-.form-control
-  height 37px
-  padding 10px 14px
-  font-size 15px
-  color colorDark
-  line-height 1
-  background-color transparent
-  border 1px solid colorDark
-  border-radius 0
-  transition none
-  ::placeholder
-    opacity 0.3
-  &:focus
-    color colorDark
-    background-color transparent
-    border-color colorDark
-
-  @media (min-width 1440px)
-    height 63px
-    font-size 23px
-    padding 20px 32px
-
-.btn-form
-  margin 34px auto 0
-
-//** Certificate **//
-.certificate-title
-  font-family fontLight
-  font-size 28px
-  line-height 1.16
-  color colorRed
-  margin-bottom 26px
-
-  @media (min-width 768px)
-    font-size 38px
-    margin-top 60px
-
-.certificate-text
-  font-family fontRegular
-  font-size 18px
-  line-height 1.32
-  color colorDark
-
-  @media (min-width 768px)
-    margin-bottom 44px
-
-.list
-  margin-bottom 1rem
-  list-style outside
-  padding-left 18px
-  li
-    margin-bottom 10px
-
-.certificate-bottom
-  text-align center
-  margin-bottom 176px
-
-  @media (min-width 768px)
-    margin-bottom 70px
-
-  @media (min-width 1440px)
-    margin-bottom 80px
-
-.certificate-row
-  position relative
-  display flex
-  flex-direction column
-  justify-content space-between
-  width 100%
-  margin-bottom 0.95em
-  div
-    background colorWhite
-
-  @media (min-width 768px)
-    flex-direction row
-
-.dots
+.footer-logo
   display none
-  position absolute
-  width 100%
-  top 18px
-  z-index -1
-  border-top 1px dotted #000
-  background transparent
 
   @media (min-width 768px)
     display block
+    width 136px
 
-.logo-abstract
-  position absolute
-  bottom 0
-  right 0
-  width 106px
+  @media (min-width 1600px)
+    width 170px
+
+.footer-container
+  display flex
+  flex-direction column
+  align-items center
 
   @media (min-width 768px)
-    width 150px
+    flex-direction row
+    justify-content space-between
 
-  @media (min-width 1440px)
-    width 270px
+.footer-right
+
+  @media (min-width 768px)
+    display flex
+    align-items center
+
+.footer-phone
+  font-family fontMedium
+  font-size 20px
+  color colorWhite
+  opacity 0.7
+  &:hover
+  &:focus
+    color colorWhite
+
+.footer-text
+  font-family fontMedium
+  font-size 14px
+  color colorWhite
+  opacity 0.5
+  text-align center
+
+  @media (min-width 1600px)
+    font-size 16px
+
+.social-container
+  text-align center
+  margin 20px 0
+
+  @media (min-width 768px)
+    margin 0 0 0 30px
+
+  @media (min-width 1600px)
+    margin 0 0 0 40px
+
+.link-social
+  width 25px
+  height 25px
+  opacity 0.7
+  &+.link-social
+    margin-left 20px
+  &:hover
+  &:focus
+    opacity 1
+
+  @media (min-width 1600px)
+    width 30px
+    height 30px
+
+.footer-bottom
+
+  @media (min-width 768px)
+    display flex
+    align-items center
+    justify-content space-between

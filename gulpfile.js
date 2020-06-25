@@ -6,10 +6,10 @@ const newer = require('gulp-newer');
 const multipipe = require('multipipe');
 const rename = require('gulp-rename');
 const rimraf = require('rimraf');
+const rigger = require('gulp-rigger');
 
 // Styles
 const stylus = require('gulp-stylus');
-const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer-stylus');
 const concat = require('gulp-concat');
 
@@ -58,7 +58,7 @@ gulp.task('styles', function () {
     return multipipe(
         gulp.src(paths.styles.input),
         stylus({compress: false, use:[autoprefixer()]}),
-		concat('style.css'),
+        concat('style.css'),
         gulp.dest(paths.styles.output)
     );
 });
@@ -69,7 +69,7 @@ gulp.task('bootstrap', function () {
         sass(),
         gulp.dest(paths.bootstrap.output),
         cleanCSS(),
-        rename('bootstrap.min.css'),
+        rename({suffix: '.min'}),
         gulp.dest(paths.bootstrap.output)
     );
 });
@@ -92,6 +92,7 @@ gulp.task('assets', function(){
 gulp.task('html', function() {
     return multipipe(
         gulp.src(paths.html.input),
+        rigger(),
         gulp.dest(paths.html.output)
     );
 });
@@ -115,7 +116,9 @@ gulp.task('watch', function () {
 
 gulp.task('serve', function () {
     browserSync.init({
-        server: 'public'
+        server: 'public',
+        baseDir: 'public',
+        index: 'index.html'
     });
     browserSync.watch('public/**/*.*').on('change', browserSync.reload);
 });
