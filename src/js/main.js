@@ -7,6 +7,12 @@ $( document ).ready(function() {
             mask: '+{7} 000 000-00-00'
         });
 
+    $("a.btn").click(function (){
+        $('html, body').animate({
+            scrollTop: $("#callback").offset().top
+        }, 1000);
+    });
+
     var inputs = $('input[type="text"]');
     var checkbox = $('input[type="checkbox"]');
     var button = $('button[type="submit"]');

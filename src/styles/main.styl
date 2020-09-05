@@ -1,31 +1,25 @@
-fontRegular = ProximaSoftRegular
-fontMedium = ProximaSoftMedium
-fontBold = ProximaSoftBold
-fontSemiBold = ProximaSoftSemiBold
+fontRegular = ProximaNovaRegular
+fontBold = ProximaNovaBold
+fontSemiBold = ProximaNovaSemiBold
 fontRouble = PTRoubleSans
 colorWhite = #ffffff
 colorGrey = #54616c
 colorRed = #da2128
 
 @font-face
-  font-family ProximaSoftRegular
-  src url("../assets/fonts/ProximaSoft-Regular.woff2") format('woff2'),
-  url("../assets/fonts/ProximaSoft-Regular.woff") format('woff')
+  font-family ProximaNovaRegular
+  src url("../assets/fonts/ProximaNova-Regular.woff2") format('woff2'),
+  url("../assets/fonts/ProximaNova-Regular.woff") format('woff')
 
 @font-face
-  font-family ProximaSoftMedium
-  src url("../assets/fonts/ProximaSoft-Medium.woff2") format('woff2'),
-  url("../assets/fonts/ProximaSoft-Medium.woff") format('woff')
+  font-family ProximaNovaBold
+  src url("../assets/fonts/ProximaNova-Bold.woff2") format('woff2'),
+  url("../assets/fonts/ProximaNova-Bold.woff") format('woff')
 
 @font-face
-  font-family ProximaSoftBold
-  src url("../assets/fonts/ProximaSoft-Bold.woff2") format('woff2'),
-  url("../assets/fonts/ProximaSoft-Bold.woff") format('woff')
-
-@font-face
-  font-family ProximaSoftSemiBold
-  src url("../assets/fonts/ProximaSoft-SemiBold.woff2") format('woff2'),
-  url("../assets/fonts/ProximaSoft-SemiBold.woff") format('woff')
+  font-family ProximaNovaSemiBold
+  src url("../assets/fonts/ProximaNova-Semibold.woff2") format('woff2'),
+  url("../assets/fonts/ProximaNova-Semibold.woff") format('woff')
 
 @font-face
   font-family PTRoubleSans
@@ -175,7 +169,7 @@ section,
   letter-spacing 0.04em
   text-transform uppercase
   color colorWhite
-  border-radius 30px
+  border-radius 6px
   background colorRed
   border 0
   padding 0
@@ -183,7 +177,7 @@ section,
   &:focus
     color colorWhite
     text-decoration none
-    box-shadow 5px 10px 60px rgba(218, 33, 40, 0.3)
+    box-shadow 5px 10px 70px rgba(218, 33, 40, 0.3)
 
   @media (min-width 1600px)
     height 52px
@@ -192,15 +186,22 @@ section,
 .btn-header
 
   @media (min-width 768px)
-    width 146px
-    height 36px
-    font-size 11px
+    width 141px
+    height 40px
+    font-family fontRegular
+    font-size 10px
+    text-transform none
+    letter-spacing normal
+    color #ef4129
+    background colorWhite
+    border 1px solid #ef4129
+    &:hover
+    &:focus
+      color #ef4129
+      box-shadow 5px 10px 70px rgba(218, 33, 40, 0.3)
 
   @media (min-width 1600px)
-    width 200px
-    height 48px
-    font-size 16px
-    box-shadow none
+    font-size 15px
 
 .btn-top
   width 183px
@@ -253,7 +254,7 @@ section,
   @media (min-width 768px)
     display flex
     align-items center
-    font-family fontMedium
+    font-family fontRegular
     font-size 16px
     color colorGrey
     margin-right 30px
@@ -311,7 +312,7 @@ section,
   align-items center
   justify-content center
   height 25px
-  font-family fontRegular
+  font-family fontBold
   font-size 12px
   line-height 1.3
   letter-spacing 0.01em
@@ -336,10 +337,11 @@ section,
 
 .main-text-bottom
   display flex
+  flex-wrap wrap
   align-items center
   justify-content center
-  height 36px
-  font-family fontRegular
+  min-height 36px
+  font-family fontBold
   font-size 20px
   line-height 1.3
   letter-spacing 0.01em
@@ -395,7 +397,7 @@ section,
 .feature
   display flex
   align-items center
-  font-family fontMedium
+  font-family fontRegular
   font-size 14px
   line-height 1.3
   letter-spacing 0.02em
@@ -414,10 +416,10 @@ section,
       margin-top 0
 
   @media (min-width 1600px)
-    font-size 16px
+    font-size 18px
     padding-right 0
     &+.feature
-      margin-left 48px
+      margin-left 30px
 
 .feature-img
   display flex
@@ -430,21 +432,19 @@ section,
   border 1px dashed rgba(84, 97, 108, 0.2)
   margin-right 10px
   img
-    width 20px
+    height 20px
 
   @media (min-width 768px)
     width 28px
     height 28px
     border 0
     img
-      width 28px
+      height auto
 
   @media (min-width 1600px)
     width 35px
     height 35px
     margin-right 13px
-    img
-      width 35px
 
 .h-scroll
   overflow-x scroll
@@ -636,13 +636,13 @@ section,
 .step-title
   font-family fontBold
   font-size 22px
-  color colorRed
+  color colorGrey
 
   @media (min-width 1600px)
     font-size 24px
 
 .step-text
-  font-family fontMedium
+  font-family fontRegular
   font-size 16px
   line-height 1.5
   text-align center
@@ -670,6 +670,20 @@ section,
   @media (min-width 1600px)
     margin-bottom 0
 
+.device-title-mobile
+
+  @media (min-width 768px)
+    display none
+
+.device-title
+  display none
+
+  @media (min-width 768px)
+    display block
+
+  @media (min-width 1600px)
+    margin-bottom 60px
+
 .device-img
   display flex
   align-items center
@@ -678,12 +692,10 @@ section,
 
   @media (min-width 768px)
     margin-bottom 0
-    width 300px
-    margin-top -56px
+    margin-top 15px
 
   @media (min-width 1600px)
-    width 575px
-    margin -120px 0 0 68px
+    margin-top 45px
 
 .spec-subtitle
   font-family fontRegular
@@ -703,21 +715,16 @@ section,
 
 .spec
   display flex
-  background colorWhite
-  padding 15px
-  border-radius 20px
-  box-shadow 0 0 40px rgba(62, 62, 62, 0.08)
   &+.spec
     margin-top 10px
 
   @media (min-width 768px)
-    width 383px
+    width 380px
 
   @media (min-width 1600px)
-    width 500px
-    padding 20px
+    width 480px
     &+.spec
-      margin-top 15px
+      margin-top 25px
 
 .spec-img
   display flex
@@ -726,25 +733,15 @@ section,
   flex-shrink 0
   width 34px
   height 34px
-  border-radius 100%
-  border 1px dashed rgba(84, 97, 108, 0.2)
   margin-right 10px
-  img
-    width 22px
 
   @media (min-width 768px)
-    width 40px
-    height 40px
     margin-right 15px
-    img
-      width 25px
 
   @media (min-width 1600px)
     width 56px
     height 56px
-    margin-right 20px
-    img
-      width 35px
+    margin-right 35px
 
 .spec-text
   font-family fontRegular
@@ -789,7 +786,7 @@ section,
   text-decoration line-through
 
 .price-new
-  font-family fontMedium
+  font-family fontRegular
   color colorRed
 
 .rouble-sign
@@ -852,7 +849,7 @@ section,
     margin-top 60px
 
 .tariff-title
-  font-family fontMedium
+  font-family fontRegular
   font-size 18px
   line-height 1.3
   letter-spacing 0.01em
@@ -880,7 +877,7 @@ section,
   flex-direction column
   align-items center
   justify-content flex-end
-  font-family fontMedium
+  font-family fontRegular
   font-size 11px
   letter-spacing 0.04em
   text-transform uppercase
@@ -889,7 +886,7 @@ section,
     color colorRed
     border-bottom 2px solid colorRed
     .apartment-icon
-      background-image url("../assets/images/apartment_red.png")
+      background-image url("../assets/images/apartment_red.svg")
     .house-icon
       background-image url("../assets/images/house_red.svg")
 
@@ -917,10 +914,10 @@ section,
     height 80px
 
 .apartment-icon
-  background-image url("../assets/images/apartment.png")
+  background-image url("../assets/images/apartment.svg")
 
   @media (min-width 768px)
-    background-image url("../assets/images/apartment_circle.png")
+    background-image url("../assets/images/apartment_circle.svg")
 
 .house-icon
   background-image url("../assets/images/house.svg")
@@ -978,7 +975,7 @@ section,
     font-size 16px
 
 .tariff-price
-  font-family fontMedium
+  font-family fontRegular
   font-size 18px
   line-height 1.4
   text-align center
@@ -1383,7 +1380,7 @@ footer
     align-items center
 
 .footer-phone
-  font-family fontMedium
+  font-family fontRegular
   font-size 20px
   color colorWhite
   opacity 0.7
@@ -1392,7 +1389,7 @@ footer
     color colorWhite
 
 .footer-text
-  font-family fontMedium
+  font-family fontRegular
   font-size 14px
   color colorWhite
   opacity 0.5
